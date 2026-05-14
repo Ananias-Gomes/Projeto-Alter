@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Alter - Foco e Disciplina</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        
+        <div id="tela-login">
+            <h1>Alter.</h1>
+            <p class="subtitulo">Faça login para continuar sua jornada.</p>
+            
+            <input type="email" id="emailInput" placeholder="Seu email (ex: foco@alter.com)">
+            <input type="password" id="senhaInput" placeholder="Sua senha (ex: 123)">
+            
+            <button onclick="fazerLogin()">Entrar</button>
+        </div>
+
+        <div id="tela-dashboard" style="display: none;">
+            <h1>Seu Progresso.</h1>
+            <p class="subtitulo">Qual foi o seu foco hoje?</p>
+            
+            <input type="text" id="campoProgresso" placeholder="Ex: Estudei 2 horas de programação">
+            
+            <button onclick="enviarCheckin()">Registrar Progresso</button>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
