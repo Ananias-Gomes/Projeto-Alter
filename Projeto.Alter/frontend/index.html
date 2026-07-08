@@ -1,34 +1,73 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Alter - Foco e Disciplina</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alter - Mapeando a Jornada</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="container">
-        
-        <div id="tela-login">
-            <h1>Alter.</h1>
-            <p class="subtitulo">Faça login para continuar sua jornada.</p>
+    <div id="tela-triagem" style="display: none;">
+        <div class="carrossel-triagem">
             
-            <input type="email" id="emailInput" placeholder="Seu email (ex: foco@alter.com)">
-            <input type="password" id="senhaInput" placeholder="Sua senha (ex: 123)">
-            
-            <button onclick="fazerLogin()">Entrar</button>
-        </div>
+            <div class="pagina-triagem">
+                <h2>01. Seus Hobbies</h2>
+                <p class="subtitulo">O que você pratica por pura paixão?</p>
+                <input type="text" id="triagemHobby" placeholder="Ex: Desenho, Piano, Jiu-Jitsu">
+                <input type="text" id="triagemHobbyObjetivo" placeholder="Seu objetivo com isso (Ex: Dominar a técnica)">
+                <p class="dica-navegacao">Arraste para o lado para continuar →</p>
+            </div>
 
-        <div id="tela-dashboard" style="display: none;">
-            <h1>Seu Progresso.</h1>
-            <p class="subtitulo">Qual foi o seu foco hoje?</p>
-            
-            <input type="text" id="campoProgresso" placeholder="Ex: Estudei 2 horas de programação">
-            
-            <button onclick="enviarCheckin()">Registrar Progresso</button>
-        </div>
+            <div class="pagina-triagem">
+                <h2>02. Carreira & Estudos</h2>
+                <p class="subtitulo">Qual é o seu maior foco profissional ou acadêmico?</p>
+                <input type="text" id="triagemCarreira" placeholder="Ex: Passar em Medicina, Promoção para Sênior">
+                <p class="dica-navegacao">Arraste para o lado para continuar →</p>
+            </div>
 
+            <div class="pagina-triagem">
+                <h2>03. A Tríade do Equilíbrio</h2>
+                <p class="subtitulo">Defina o seu foco diário para cada pilar:</p>
+                <input type="text" id="triagemCorpo" placeholder="Corpo (Ex: Treino de força ou corrida)">
+                <input type="text" id="triagemMente" placeholder="Mente (Ex: Ler 15 páginas ou estudar inglês)">
+                <input type="text" id="triagemEspirito" placeholder="Espírito (Ex: 10 minutos de meditação)">
+                
+                <button onclick="finalizarTriagem()">Concluir e Salvar Perfil</button>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="tela-login" style="display: none;">
+        <h1>Acesse o Alter.</h1>
+        <p class="subtitulo">Vincule os dados do seu perfil para salvar seu progresso</p>
+        <input type="email" id="emailInput" placeholder="Seu e-mail">
+        <input type="password" id="senhaInput" placeholder="Sua senha">
+        <button onclick="fazerLogin()">Entrar no Aplicativo</button>
+    </div>
+
+    <div id="tela-dashboard" style="display: none;">
+        <div class="carrossel-instagram">
+            <div class="pagina-carrossel" id="pagina-avatar">
+                <h1>Nível 1</h1>
+                <div class="avatar-placeholder"></div>
+                <h2 id="contador-streak">🔥 0 Dias</h2>
+                <p class="subtitulo">Continue focado para evoluir.</p>
+            </div>
+            <div class="pagina-carrossel" id="pagina-checkin">
+                <h1>Seu Progresso.</h1>
+                <p class="subtitulo">Qual foi o seu foco hoje?</p>
+                <input type="text" id="campoProgresso" placeholder="Ex: Cumpri a meta de leitura">
+                <button onclick="enviarCheckin()">Registrar</button>
+                <button onclick="fazerLogout()" class="btn-sair">Sair da conta</button>
+            </div>
+            <div class="pagina-carrossel" id="pagina-ikigai">
+                <h1>Ikigai.</h1>
+                <p class="subtitulo">Sua razão de ser.</p>
+                <div class="ikigai-placeholder">Em construção...</div>
+            </div>
+        </div>
     </div>
 
     <script src="script.js"></script>

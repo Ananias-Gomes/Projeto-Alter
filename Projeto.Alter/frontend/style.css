@@ -69,3 +69,90 @@ button {
 button:hover {
     background-color: #2f2d28;
 }
+.carrossel-instagram {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    width: 100%;
+    height: 60vh;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.carrossel-instagram::-webkit-scrollbar {
+    display: none;
+}
+
+.pagina-carrossel {
+    flex: none; 
+    width: 100%;
+    height: 100%;
+    scroll-snap-align: start;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.avatar-placeholder {
+    width: 100px;
+    height: 100px;
+    background-color: #e1e1e1;
+    border-radius: 50%;
+    margin: 20px 0;
+    transition: all 0.5s ease;
+}
+
+.btn-sair {
+    background-color: transparent;
+    color: #9a9a97;
+    margin-top: 20px;
+}
+.btn-sair:hover { background-color: transparent; color: #37352f; }
+/* --- CONFIGURAÇÃO DO CARROSSEL DE TRIAGEM --- */
+.carrossel-triagem {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    width: 100%;
+    height: 85vh;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+.carrossel-triagem::-webkit-scrollbar {
+    display: none;
+}
+
+.pagina-triagem {
+    flex: none;
+    width: 100%;
+    height: 100%;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.pagina-triagem input {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 15px;
+}
+
+/* Texto indicativo discreto */
+.dica-navegacao {
+    color: #9a9a97;
+    font-size: 0.85rem;
+    margin-top: 30px;
+    animation: piscar 2s infinite ease-in-out;
+}
+
+@keyframes piscar {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+}
