@@ -31,6 +31,13 @@ h1 {
     margin-bottom: 8px;
 }
 
+h2 {
+    font-weight: 600;
+    font-size: 1.4rem;
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+}
+
 .subtitulo {
     font-size: 0.9rem;
     color: #9a9a97;
@@ -78,9 +85,15 @@ button:hover {
     scroll-behavior: smooth;
     -ms-overflow-style: none;
     scrollbar-width: none;
+    cursor: grab;
 }
 .carrossel-instagram::-webkit-scrollbar {
     display: none;
+}
+.carrossel-instagram.arrastando {
+    cursor: grabbing;
+    scroll-snap-type: none;
+    scroll-behavior: auto;
 }
 
 .pagina-carrossel {
@@ -120,9 +133,15 @@ button:hover {
     height: 85vh;
     scroll-behavior: smooth;
     scrollbar-width: none;
+    cursor: grab;
 }
 .carrossel-triagem::-webkit-scrollbar {
     display: none;
+}
+.carrossel-triagem.arrastando {
+    cursor: grabbing;
+    scroll-snap-type: none;
+    scroll-behavior: auto;
 }
 
 .pagina-triagem {
@@ -144,11 +163,60 @@ button:hover {
     margin-bottom: 15px;
 }
 
+.pagina-triagem button {
+    max-width: 280px;
+    margin-bottom: 12px;
+}
+
+/* --- Cards de múltipla escolha da triagem (teste de perfil) --- */
+.opcoes-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    width: 100%;
+    max-width: 480px;
+    margin-bottom: 20px;
+}
+
+.opcao-triagem {
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    padding: 16px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 0.95rem;
+    background-color: #ffffff;
+    transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+    user-select: none;
+}
+
+.opcao-triagem:hover {
+    border-color: #9a9a97;
+}
+
+.opcao-triagem.selecionada {
+    border-color: #37352f;
+    background-color: #37352f;
+    color: #ffffff;
+}
+
+.opcao-triagem .opcao-emoji {
+    display: block;
+    font-size: 1.6rem;
+    margin-bottom: 6px;
+}
+
+.opcao-triagem p {
+    font-size: 0.78rem;
+    margin-top: 4px;
+    opacity: 0.75;
+}
+
 /* Texto indicativo discreto */
 .dica-navegacao {
     color: #9a9a97;
     font-size: 0.85rem;
-    margin-top: 30px;
+    margin-top: 10px;
     animation: piscar 2s infinite ease-in-out;
 }
 

@@ -10,29 +10,86 @@
 
     <div id="tela-triagem" style="display: none;">
         <div class="carrossel-triagem">
-            
+
             <div class="pagina-triagem">
-                <h2>01. Seus Hobbies</h2>
-                <p class="subtitulo">O que você pratica por pura paixão?</p>
-                <input type="text" id="triagemHobby" placeholder="Ex: Desenho, Piano, Jiu-Jitsu">
-                <input type="text" id="triagemHobbyObjetivo" placeholder="Seu objetivo com isso (Ex: Dominar a técnica)">
-                <p class="dica-navegacao">Arraste para o lado para continuar →</p>
+                <h2>01. Seu Arquétipo</h2>
+                <p class="subtitulo">Qual desses te representa melhor hoje?</p>
+                <div class="opcoes-grid">
+                    <div class="opcao-triagem" onclick="selecionarOpcao('perfil', 'Estrategista', this)">
+                        <span class="opcao-emoji">🎯</span>
+                        <strong>Estrategista</strong>
+                        <p>Foco em carreira e resultados</p>
+                    </div>
+                    <div class="opcao-triagem" onclick="selecionarOpcao('perfil', 'Criativo', this)">
+                        <span class="opcao-emoji">🎨</span>
+                        <strong>Criativo</strong>
+                        <p>Foco em paixões e expressão</p>
+                    </div>
+                    <div class="opcao-triagem" onclick="selecionarOpcao('perfil', 'Equilibrado', this)">
+                        <span class="opcao-emoji">🧘</span>
+                        <strong>Equilibrado</strong>
+                        <p>Foco em corpo, mente e espírito</p>
+                    </div>
+                    <div class="opcao-triagem" onclick="selecionarOpcao('perfil', 'Ambicioso', this)">
+                        <span class="opcao-emoji">🚀</span>
+                        <strong>Ambicioso</strong>
+                        <p>Foco em crescimento acelerado</p>
+                    </div>
+                </div>
+                <button class="btn-proximo" onclick="irParaProximaPagina(this)">Próximo →</button>
+                <p class="dica-navegacao">Ou arraste para o lado</p>
             </div>
 
             <div class="pagina-triagem">
-                <h2>02. Carreira & Estudos</h2>
-                <p class="subtitulo">Qual é o seu maior foco profissional ou acadêmico?</p>
-                <input type="text" id="triagemCarreira" placeholder="Ex: Passar em Medicina, Promoção para Sênior">
-                <p class="dica-navegacao">Arraste para o lado para continuar →</p>
+                <h2>02. Seus Hobbies</h2>
+                <p class="subtitulo">Qual área desperta sua paixão?</p>
+                <div class="opcoes-grid">
+                    <div class="opcao-triagem" onclick="selecionarOpcao('hobbyCategoria', 'Arte & Criatividade', this)">🎭 Arte & Criatividade</div>
+                    <div class="opcao-triagem" onclick="selecionarOpcao('hobbyCategoria', 'Esportes & Movimento', this)">⚽ Esportes & Movimento</div>
+                    <div class="opcao-triagem" onclick="selecionarOpcao('hobbyCategoria', 'Música', this)">🎵 Música</div>
+                    <div class="opcao-triagem" onclick="selecionarOpcao('hobbyCategoria', 'Tecnologia & Games', this)">💻 Tecnologia & Games</div>
+                    <div class="opcao-triagem" onclick="selecionarOpcao('hobbyCategoria', 'Outro', this)">✨ Outro</div>
+                </div>
+                <input type="text" id="triagemHobbyDetalhe" placeholder="Quer detalhar? (opcional) Ex: Piano, Jiu-Jitsu...">
+                <button class="btn-proximo" onclick="irParaProximaPagina(this)">Próximo →</button>
+                <p class="dica-navegacao">Ou arraste para o lado</p>
             </div>
 
             <div class="pagina-triagem">
-                <h2>03. A Tríade do Equilíbrio</h2>
-                <p class="subtitulo">Defina o seu foco diário para cada pilar:</p>
-                <input type="text" id="triagemCorpo" placeholder="Corpo (Ex: Treino de força ou corrida)">
-                <input type="text" id="triagemMente" placeholder="Mente (Ex: Ler 15 páginas ou estudar inglês)">
-                <input type="text" id="triagemEspirito" placeholder="Espírito (Ex: 10 minutos de meditação)">
-                
+                <h2>03. Carreira & Estudos</h2>
+                <p class="subtitulo">Qual é o seu maior foco profissional ou acadêmico agora?</p>
+                <div class="opcoes-grid">
+                    <div class="opcao-triagem" onclick="selecionarOpcao('carreira', 'Crescer na carreira atual', this)">📈 Crescer na carreira atual</div>
+                    <div class="opcao-triagem" onclick="selecionarOpcao('carreira', 'Passar em concurso/prova', this)">📚 Passar em concurso/prova</div>
+                    <div class="opcao-triagem" onclick="selecionarOpcao('carreira', 'Empreender', this)">💡 Empreender</div>
+                    <div class="opcao-triagem" onclick="selecionarOpcao('carreira', 'Voltar a estudar', this)">🎓 Voltar a estudar</div>
+                </div>
+                <button class="btn-proximo" onclick="irParaProximaPagina(this)">Próximo →</button>
+                <p class="dica-navegacao">Ou arraste para o lado</p>
+            </div>
+
+            <div class="pagina-triagem">
+                <h2>04. Pilar Prioritário</h2>
+                <p class="subtitulo">Qual pilar você mais precisa fortalecer agora?</p>
+                <div class="opcoes-grid">
+                    <div class="opcao-triagem" onclick="selecionarOpcao('pilarPrioritario', 'Corpo', this)">💪 Corpo</div>
+                    <div class="opcao-triagem" onclick="selecionarOpcao('pilarPrioritario', 'Mente', this)">🧠 Mente</div>
+                    <div class="opcao-triagem" onclick="selecionarOpcao('pilarPrioritario', 'Espírito', this)">🕊️ Espírito</div>
+                    <div class="opcao-triagem" onclick="selecionarOpcao('pilarPrioritario', 'Os três igualmente', this)">⚖️ Os três igualmente</div>
+                </div>
+                <button class="btn-proximo" onclick="irParaProximaPagina(this)">Próximo →</button>
+                <p class="dica-navegacao">Ou arraste para o lado</p>
+            </div>
+
+            <div class="pagina-triagem">
+                <h2>05. Estilo de Motivação</h2>
+                <p class="subtitulo">O que mais te mantém constante em um hábito?</p>
+                <div class="opcoes-grid">
+                    <div class="opcao-triagem" onclick="selecionarOpcao('motivacao', 'Disciplina e rotina', this)">⏰ Disciplina e rotina</div>
+                    <div class="opcao-triagem" onclick="selecionarOpcao('motivacao', 'Recompensas e conquistas', this)">🏆 Recompensas e conquistas</div>
+                    <div class="opcao-triagem" onclick="selecionarOpcao('motivacao', 'Apoio de outras pessoas', this)">🤝 Apoio de outras pessoas</div>
+                    <div class="opcao-triagem" onclick="selecionarOpcao('motivacao', 'Propósito e significado', this)">🌱 Propósito e significado</div>
+                </div>
                 <button onclick="finalizarTriagem()">Concluir e Salvar Perfil</button>
             </div>
 
@@ -40,11 +97,13 @@
     </div>
 
     <div id="tela-login" style="display: none;">
-        <h1>Acesse o Alter.</h1>
-        <p class="subtitulo">Vincule os dados do seu perfil para salvar seu progresso</p>
-        <input type="email" id="emailInput" placeholder="Seu e-mail">
-        <input type="password" id="senhaInput" placeholder="Sua senha">
-        <button onclick="fazerLogin()">Entrar no Aplicativo</button>
+        <div class="container">
+            <h1>Acesse o Alter.</h1>
+            <p class="subtitulo">Vincule os dados do seu perfil para salvar seu progresso</p>
+            <input type="email" id="emailInput" placeholder="Seu e-mail">
+            <input type="password" id="senhaInput" placeholder="Sua senha">
+            <button onclick="fazerLogin()">Entrar no Aplicativo</button>
+        </div>
     </div>
 
     <div id="tela-dashboard" style="display: none;">
